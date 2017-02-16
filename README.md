@@ -4,7 +4,7 @@ Fork de repository en implementeer het volgende gedrag:
 
 - scores mogen niet overlappen met de andere ranks
 - score_from moet lager zijn dan de score_to
-- score_to moet hoger zijn dan de score_to
+- score_to moet hoger zijn dan de score_from
 
 Voeg tevens wat testen toe die testen of het bovenstaande gedrag goed geimplementeerd is
 
