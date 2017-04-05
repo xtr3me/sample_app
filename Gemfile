@@ -20,6 +20,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 
 gem 'unicorn'
+gem 'pry'
 
 group :development, :test do
   gem 'pry-rails'
