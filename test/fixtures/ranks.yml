@@ -6,6 +6,11 @@ one:
   name: MyString
 
 two:
-  score_from: 1.5
-  score_to: 1.5
+  score_from: 2
+  score_to: 2.5
+  name: MyString
+
+three:
+  score_from: 3.5
+  score_to: 3
   name: MyString

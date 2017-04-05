@@ -171,6 +171,7 @@ DEPENDENCIES
   font-awesome-sass
   jquery-rails
   jquery-ui-rails
+  pry
   pry-rails
   rails (= 4.2.7.1)
   sass-rails
@@ -183,4 +184,4 @@ DEPENDENCIES
   unicorn
 
 BUNDLED WITH
-   1.13.1
+   1.14.4
