@@ -3,9 +3,9 @@
 one:
   score_from: 1.5
   score_to: 2.5
-  name: MyString
+  name: MyStringOne
 
 two:
-  score_from: 1.5
-  score_to: 2.5
-  name: MyString
+  score_from: 3.5
+  score_to: 4.5
+  name: MyStringTwo
