@@ -2,10 +2,10 @@
 
 one:
   score_from: 1.5
-  score_to: 1.5
+  score_to: 2.5
   name: MyString
 
 two:
   score_from: 1.5
-  score_to: 1.5
+  score_to: 2.5
   name: MyString
