@@ -18,7 +18,7 @@ class RanksControllerTest < ActionController::TestCase
 
   test "should create rank" do
     assert_difference('Rank.count') do
-      post :create, rank: { name: @rank.name, score_from: @rank.score_from, score_to: @rank.score_to }
+      post :create, rank: { name: 'AA', score_from: 30, score_to: 40 }
     end
 
     assert_redirected_to rank_path(assigns(:rank))

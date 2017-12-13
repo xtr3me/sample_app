@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  score_from: 1.5
-  score_to: 1.5
+  score_from: 0.1
+  score_to: 0.2
   name: MyString
 
 two:
-  score_from: 1.5
-  score_to: 1.5
-  name: MyString
+  score_from: 0.4
+  score_to: 0.5
+  name: MyString1
