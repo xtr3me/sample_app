@@ -41,9 +41,12 @@ class RanksControllerTest < ActionController::TestCase
 
   test "should destroy rank" do
     assert_difference('Rank.count', -1) do
-      delete :destroy, id: @rank
+    delete :destroy, id: @rank
     end
 
     assert_redirected_to ranks_path
   end
+
+    
+
 end

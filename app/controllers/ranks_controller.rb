@@ -22,9 +22,10 @@ class RanksController < ApplicationController
   # POST /ranks
   def create
     @rank = Rank.new(rank_params)
-
+    Rank.float_one_decimal
     if @rank.save
-      redirect_to @rank, notice: 'Rank was successfully created.'
+      flash[:alert] = 'Rank was successfully created.'
+      redirect_to @rank
     else
       flash[:alert] = @rank.errors.full_messages.join(", ")
       render :new
