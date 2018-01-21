@@ -10,8 +10,10 @@ class RankTest < ActiveSupport::TestCase
   end
 
   test "scores have a precision of 0.1" do
-    rank = Rank.new(:score_from => 1.2345)
-    assert_equal rank.score_from, 1.2
+    rank = Rank.new(:score_from => 1.2345, :score_to => 2.2345)
+    rank.save
+    assert_equal 1.2, rank.score_from
+    assert_equal 2.2, rank.score_to
   end
 
   test "score_to should be higher than score_from" do

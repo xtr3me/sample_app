@@ -1,26 +1,12 @@
 class Rank < ActiveRecord::Base
-
   validates :score_from, presence: true
   validates :score_to, presence: true
 
-# attr_accessor :score_from, :score_to
-#
-#   def initialize(score_from, score_to)
-#     @score_from = score_from
-#     @score_to = score_to
-#   end
+  before_save :float_one_decimal
 
-  # def float_one_decimal_score_from
-  #   self.score_from.round(1)
-  # end
-  #
-  # def float_one_decimal_score_to
-  #   self.score_to.round(1)
-  # end
-
-  def float_one_decimal(score_from, score_to)
-    self.score_from.round(1)
-    self.score_to.round(1)
+  def float_one_decimal
+    self.score_from = score_from.round(1)
+    self.score_to = score_to.round(1)
   end
 
   # def score_from_lower_than_score_to

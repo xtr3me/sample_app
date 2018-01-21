@@ -22,7 +22,6 @@ class RanksController < ApplicationController
   # POST /ranks
   def create
     @rank = Rank.new(rank_params)
-    Rank.float_one_decimal
     if @rank.save
       flash[:alert] = 'Rank was successfully created.'
       redirect_to @rank
