@@ -19,8 +19,21 @@ class RankTest < ActiveSupport::TestCase
   test "score_to should be higher than score_from" do
     rank = Rank.new(:score_to => 2, :score_from => 1)
     assert rank.valid?
+    # assert_equal [], "score to should be higher!"
     assert rank.errors[:score_to]
     assert rank.errors[:score_from]
   end
 
+  test "score_from should lower than score_to" do
+    rank = Rank.new(:score_to => 2, :score_from => 1)
+    assert rank.valid?
+    assert rank.errors[:score_to]
+    assert rank.errors[:score_from]
+  end
+
+  # test "scores cannot overlap with other ranks" do
+  # rank =  Rank.new(:score_to => 5, :score_from => 5)
+  # assert rank.valid?
+  # assert rank.errors
+  # end
 end

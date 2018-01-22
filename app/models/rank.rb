@@ -7,6 +7,7 @@ class Rank < ActiveRecord::Base
 
   before_save :float_one_decimal
   before_save :score_to_higher_than_score_from
+  before_save :score_from_lower_than_score_to
 
 
   def float_one_decimal
