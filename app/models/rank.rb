@@ -3,7 +3,7 @@ class Rank < ActiveRecord::Base
   validates :score_to, presence: true
 
   validate :score_to_higher_than_score_from,
-          :score_from_lower_than_score_to
+           :score_from_lower_than_score_to
 
   before_save :float_one_decimal
   before_save :score_to_higher_than_score_from
