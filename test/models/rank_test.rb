@@ -17,8 +17,8 @@ class RankTest < ActiveSupport::TestCase
   end
 
   test "score_to should be higher than score_from" do
-    rank = Rank.new(:score_to => 6, :score_from => 5)
-    assert rank.valid?
-    assert_equal rank.errors[:score_to], [6], rank.errors.to_h
+    rank = Rank.new(:score_to => 6, :score_from => 4)
+    assert rank.save
+    assert_operator rank.score_to, :>, rank.score_from
   end
 end
