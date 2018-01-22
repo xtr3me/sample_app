@@ -3,7 +3,7 @@ require 'test_helper'
 class RankTest < ActiveSupport::TestCase
 
   test "rank attributes must not be empty" do
-    rank = Rank.new
+    rank = Rank.new(:score_to => 2, :score_from => 3)
     assert rank.invalid?
     assert rank.errors[:score_from].any?
     assert rank.errors[:score_to].any?
@@ -17,8 +17,10 @@ class RankTest < ActiveSupport::TestCase
   end
 
   test "score_to should be higher than score_from" do
-    rank = Rank.new(:score_to => 6, :score_from => 4)
-    assert rank.save
-    assert_operator rank.score_to, :>, rank.score_from
+    rank = Rank.new(:score_to => 2, :score_from => 1)
+    assert rank.valid?
+    assert rank.errors[:score_to]
+    assert rank.errors[:score_from]
   end
+
 end
