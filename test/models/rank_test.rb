@@ -5,8 +5,8 @@ class RankTest < ActiveSupport::TestCase
   test "rank attributes must not be empty" do
     rank = Rank.new(:score_to => 2, :score_from => 3)
     assert rank.invalid?
-    assert rank.errors[:score_from].any?
-    assert rank.errors[:score_to].any?
+    assert_equal "Score_from cannot be blank", rank.errors[:score_from]
+    assert_equal "Score_to cannot be blank", rank.errors[:score_to]
   end
 
   test "scores have a precision of 0.1" do

@@ -4,13 +4,8 @@ class Rank < ActiveRecord::Base
 
   validate :score_to_higher_than_score_from,
            :score_from_lower_than_score_to
-           :rank_search_scores
 
   before_save :float_one_decimal
-  before_save :score_to_higher_than_score_from
-  before_save :score_from_lower_than_score_to
-  before_save :rank_search_scores
-
 
   def float_one_decimal
     self.score_from = score_from.round(1)
@@ -19,23 +14,23 @@ class Rank < ActiveRecord::Base
 
   def score_to_higher_than_score_from
     if self.score_to < self.score_from
-      errors.add(:score_to, 'Enter higher SCORE TO number ' )
+      errors.add(:score_to, 'should be higher than score from' )
     end
   end
 
   def score_from_lower_than_score_to
     if self.score_from > self.score_to
-      errors.add(:score_from, 'Enter a lower SCORE FROM number')
+      errors.add(:score_from, 'should be lower than score to ')
     end
   end
 
   def rank_search_scores
-    # rank_match = Rank.where({self.score_from => search_score })
-    # if rank_match.empty?
-    #   return nil
-    #   else
-    #     return rank_match
-    # end
+    rank_match = Rank.where({self.score_from => search_score })
+    if rank_match.empty?
+      return nil
+      else
+        return rank_match
+    end
   end
 
 
