@@ -22,7 +22,6 @@ class RanksController < ApplicationController
   # POST /ranks
   def create
     @rank = Rank.new(rank_params)
-
     if @rank.save
       redirect_to @rank, notice: 'Rank was successfully created.'
     else
