@@ -22,11 +22,10 @@ class RanksController < ApplicationController
   # POST /ranks
   def create
     @rank = Rank.new(rank_params)
-
     if @rank.save
       redirect_to @rank, notice: 'Rank was successfully created.'
     else
-      flash[:alert] = @rank.errors.full_messages.join(", ")
+      flash[:alert] = show_errors(@rank)
       render :new
     end
   end
@@ -36,6 +35,7 @@ class RanksController < ApplicationController
     if @rank.update(rank_params)
       redirect_to @rank, notice: 'Rank was successfully updated.'
     else
+      flash[:alert] = show_errors(@rank)
       render :edit
     end
   end
@@ -56,4 +56,9 @@ class RanksController < ApplicationController
     def rank_params
       params.require(:rank).permit(:score_from, :score_to, :name)
     end
+
+    def show_errors(rank)
+      rank.errors.full_messages.join(", ")
+    end
+
 end
