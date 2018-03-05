@@ -29,17 +29,6 @@ describe Rank do
       end
     end
 
-    describe ".ensure_no_overlap" do
-      it "should ensure that score_from is lower than score_to" do
-        expect(@ranks[:normal].save).to eq true
-        expect(@ranks[:normal].errors[:base].size).to eq 0
-        expect(@ranks[:equal].save).to eq false
-        expect(@ranks[:equal].errors[:base].size).to be > 0
-        expect(@ranks[:reverse].save).to eq false
-        expect(@ranks[:reverse].errors[:base].size).to be > 0
-      end
-    end
-
   end
 
 end
