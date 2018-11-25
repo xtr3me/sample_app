@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.7.1'
+gem 'rails', '5.0.3'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
@@ -30,3 +30,7 @@ group :development do
 end
 
 gem 'simple_form'
+
+group :test do
+	gem 'minitest', '~> 5.10', '!= 5.10.2'
+end
