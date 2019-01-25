@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160920180808) do
+ActiveRecord::Schema.define(version: 20190125205923) do
 
   create_table "ranks", force: :cascade do |t|
-    t.float    "score_from"
-    t.float    "score_to"
+    t.decimal  "score_from", precision: 3, scale: 1
+    t.decimal  "score_to",   precision: 3, scale: 1
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
 end
