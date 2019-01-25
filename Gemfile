@@ -33,6 +33,7 @@ end
 
 group :test do
   gem 'shoulda-matchers', '4.0.0.rc1'
+  gem 'database_cleaner'
 end
 
 gem 'simple_form'
