@@ -1,4 +1,4 @@
 class Rank < ActiveRecord::Base
-  validates :name, presence: true
+  validates :name, :score_from, :score_to, presence: true
 
 end
