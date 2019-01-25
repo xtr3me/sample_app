@@ -25,4 +25,12 @@ describe Rank, type: :model do
       expect(rank).not_to be_valid
     end
   end
+
+  describe 'score' do
+    it 'should have precision of one' do
+      rank = FactoryBot.create(:rank, score_from: 6.12, score_to: 7.12)
+      expect(rank.score_from).to eq 6.1
+      expect(rank.score_to).to eq 7.1
+    end
+  end
 end
