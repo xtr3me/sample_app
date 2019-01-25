@@ -16,7 +16,7 @@ class Rank < ActiveRecord::Base
   private
 
   # Compares score_from and score_to
-  # and return error if it's agains validtion rules
+  # and returns error if it's against validation rules
   def validate_scores
     errors.add(:score_from, 'has to be lower than score_to') if (score_from <=> score_to) > 0
   end
