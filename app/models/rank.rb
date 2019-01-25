@@ -24,8 +24,10 @@ class Rank < ActiveRecord::Base
   # It will return error if it's overlappimg
   def not_overlapping
     Rank.ranges.each do |range|
-      errors.add(:score, 'should not overlap with other records') if range.include?(score_from) || range.include?(score_to)
-      return
+      if range.include?(score_from) || range.include?(score_to)
+        errors.add(:score, 'should not overlap with other records')
+        return
+      end
     end
   end
 end
