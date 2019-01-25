@@ -23,10 +23,15 @@ gem 'unicorn'
 
 group :development, :test do
   gem 'pry-rails'
+  gem 'rspec-rails', '~> 3.8'
 end
 
 group :development do
   gem 'better_errors'
+end
+
+group :test do
+  gem 'shoulda-matchers', '4.0.0.rc1'
 end
 
 gem 'simple_form'
