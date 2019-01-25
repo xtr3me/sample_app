@@ -1,6 +1,15 @@
 class Rank < ActiveRecord::Base
   validates :name, :score_from, :score_to, presence: true
   validate :validate_scores
+  # Returns instance's score_from and score_to as a range
+  def range
+    (score_from..score_to)
+  end
+
+  # Maps the records as ranges
+  def self.ranges
+    all.map{ |rank| rank.range }
+  end
 
   private
 
