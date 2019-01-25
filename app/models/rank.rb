@@ -10,7 +10,7 @@ class Rank < ActiveRecord::Base
 
   # Maps the records as ranges
   def self.ranges
-    all.map{ |rank| rank.range }
+    all.map(&:range)
   end
 
   private
