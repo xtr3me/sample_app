@@ -25,3 +25,8 @@ group :development, :test do
 end
 
 gem 'simple_form'
+
+# Run against this stable release
+group :development, :test do
+  gem 'rspec-rails', '~> 5.0.0'
+end
