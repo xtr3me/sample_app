@@ -2,23 +2,21 @@ require 'rails_helper'
 
 RSpec.describe Rank, type: :model do
 
-  before(:each) do
-    rank = Rank.create({ name: 'test' })
-    @data = get_data_from_file  # [ '42', '36' ]
-  end
-
+  rank = Rank.create({ name: 'test' })
+  rank.score_from = 1
+  rank.score_to = 2
 
   it 'score_from < score_to' do
-    
-    rank.score_from = 3
-    rank.score_to = 5
-    expect(rank).to be_valid
+   rank = Rank.create!({name:'test',score_from:3,score_to:5})
+    expect(rank.score_from).to be < rank.score_to
   end
 
-  # it 'should should throw error' do
-  #   rank = Rank.create({ name: 'test', score_from: 3, score_to: 5 })
-  #   expect(rank).to be_valid
-  # end
+  it 'should should throw error' do 
+    rank =Rank.create!({name:'test',score_from:3,score_to:5})
+    if rank.score_to < rank.score_from
+      raise "oops"
+    end
+  end
 
   # it 'score_to > score_to' do
   #   # checker = rank.score_from > rank.score_to
