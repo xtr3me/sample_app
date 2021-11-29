@@ -11,6 +11,8 @@ gem 'sqlite3'
 # gem 'execjs'
 # gem 'therubyracer'
 gem 'slim'
+gem "rspec"
+
 
 # gem 'jquery-rails'
 # gem 'jquery-ui-rails'
@@ -22,6 +24,7 @@ gem 'puma'
 
 group :development, :test do
   gem 'pry-rails'
+  gem 'rspec-rails', '~> 5.0.0'
 end
 
 gem 'simple_form'
